@@ -1,0 +1,23 @@
+﻿@model Shop.Web.Models.ProductsModel
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Product</h2>
+
+@foreach (var item in Model.Products())
+{
+    <ul>
+        @*        <li>@Html.ActionLink("Edit", "Edit", new { id=item.Id })</li>*@
+    </ul>
+    <table>
+        <tr>
+            <td>             
+                @Html.ActionLink(@item.ProductName, "Index", "Product", new { productId = item.ProductId }, null)                
+            </td>
+            <td>@Html.ActionLink("Edit", "Edit", "Product", new { productId = item.ProductId }, null)</td>
+        </tr>
+    </table>
+ 
+}
+    

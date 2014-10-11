@@ -1,0 +1,21 @@
+﻿@model Shop.Web.Mappers.ProductViewModel
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>@Model.ProductName</h2>
+
+<table>
+    <tr>
+        <td>Price</td>
+        <td>@Model.UnitPrice</td>
+    </tr>
+    <tr>
+        <td>Units in stock</td>
+        <td>@Model.UnitsInStock</td>
+    </tr>
+    <tr>
+        <td>Units on order</td>
+        <td>@Model.UnitsOnOrder</td>
+    </tr>
+</table>
