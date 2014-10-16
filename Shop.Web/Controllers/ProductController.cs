@@ -21,10 +21,24 @@ namespace Shop.Web.Controllers
             return View(productViewModel);
         }
 
-        public ActionResult Edit(int productId)
+        [HttpGet]
+        [AcceptVerbs("GET")]
+        public ActionResult Edit (int productId)
         {
             var product = _shopContext.GetProductById(productId);
-            return View(product);
+            
+            var productMapper = new EditProductMapper();
+            var editProductViewModel = productMapper.ToViewModel(product);
+
+            return View(editProductViewModel);
+        }
+
+        [HttpPost]
+        [AcceptVerbs("POST")]
+        public ActionResult Edit(int productID, FormCollection form)
+        {
+            //Save the item and redirect…
+            return View();
         }
     }
 }

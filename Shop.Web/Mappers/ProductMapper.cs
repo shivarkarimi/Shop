@@ -1,29 +1,22 @@
 using Shop.Core.Entities;
-using Shop.Web.Controllers;
+using Shop.Web.ViewModels.Product;
 
 namespace Shop.Web.Mappers
 {
     public class ProductMapper
     {
-        private ProductViewModel productViewModel;
+        private ProductViewModel _productViewModel;
 
         public ProductViewModel ToViewModel(Product product)
         {
-            productViewModel = new ProductViewModel
+            _productViewModel = new ProductViewModel
             {
                 ProductName = product.ProductName,
                 UnitPrice = string.Format("${0}", product.UnitPrice.ToString("#.##")),
                 UnitsInStock = product.UnitsInStock.ToString(),
                 UnitsOnOrder = product.UnitsOnOrder.ToString()
             };
-            return productViewModel;
+            return _productViewModel;
         }
-    }
-    public class ProductViewModel
-    {
-        public string ProductName { get; set; }
-        public string UnitPrice { get; set; }
-        public string UnitsInStock { get; set; }
-        public string UnitsOnOrder { get; set; }
     }
 }
