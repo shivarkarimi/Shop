@@ -180,3 +180,4 @@ C:\projects\Shop\Shop.Web\bin\DotNetOpenAuth.OpenId.xml
 C:\projects\Shop\Shop.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\projects\Shop\Shop.Web\obj\Debug\Shop.Web.dll
 C:\projects\Shop\Shop.Web\obj\Debug\Shop.Web.pdb
+C:\projects\Shop\Shop.Web\bin\DataAnnotationsExtensions.dll
