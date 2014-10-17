@@ -11,6 +11,7 @@ namespace Shop.Web.Mappers
         {
             _productViewModel = new ProductViewModel
             {
+                Id = product.ProductId,
                 ProductName = product.ProductName,
                 UnitPrice = string.Format("${0}", product.UnitPrice.ToString("#.##")),
                 UnitsInStock = product.UnitsInStock.ToString(),
