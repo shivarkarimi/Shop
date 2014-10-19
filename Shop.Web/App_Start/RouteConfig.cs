@@ -9,7 +9,7 @@ namespace Shop.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("test",
+            routes.MapRoute("ProductDetail",
                 "Product/{id}",
                 new { controller = "Product", action = "Index", id = UrlParameter.Optional });
 
