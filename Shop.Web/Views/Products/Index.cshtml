@@ -13,7 +13,8 @@
     <table>
         <tr>
             <td>             
-                @Html.ActionLink(@item.ProductName, "Index", "Product", new { id = item.ProductId }, null)                
+                @Html.ActionLink(@item.ProductName, "Index", "Product", new { id = item.ProductId }, null)      
+                @Html.RouteLink(@item.ProductName,"test", new { id = item.ProductId }, null )          
             </td>
             <td>@Html.ActionLink("Edit", "Edit", "Product", new { id = item.ProductId }, null)</td>
         </tr>
