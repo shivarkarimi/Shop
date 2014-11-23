@@ -3,7 +3,7 @@ using Shop.Web.ViewModels.Product;
 
 namespace Shop.Web.Mappers
 {
-    public class EditProductMapper
+    public class AddEditProductMapper
     {
         private EditProductViewModel _productViewModel;
 

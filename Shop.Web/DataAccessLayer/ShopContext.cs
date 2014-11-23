@@ -12,6 +12,7 @@ namespace Shop.Web.DataAccessLayer
         DbSet<Category> Categories { get; set; }
         Product GetProductById(int productId);
         void Save(Product product);
+        void Add(Product product);
     }
 
     public class ShopContext : DbContext, IShopContext
@@ -31,6 +32,13 @@ namespace Shop.Web.DataAccessLayer
         {
 
             Entry(product).State = EntityState.Modified;
+            SaveChanges();
+        }
+
+        public void Add(Product product)
+        {
+
+            Entry(product).State = EntityState.Added;
             SaveChanges();
         }
     }

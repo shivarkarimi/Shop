@@ -1575,7 +1575,7 @@ $.widget("ui.droppable", {
 		//Store the droppable's proportions
 		this.proportions = { width: this.element[0].offsetWidth, height: this.element[0].offsetHeight };
 
-		// Add the reference and positions to the manager
+		// Create the reference and positions to the manager
 		$.ui.ddmanager.droppables[o.scope] = $.ui.ddmanager.droppables[o.scope] || [];
 		$.ui.ddmanager.droppables[o.scope].push(this);
 
@@ -3633,7 +3633,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 		var o = this.options;
 		var helper = $.isFunction(o.helper) ? $(o.helper.apply(this.element[0], [event, this.currentItem])) : (o.helper == 'clone' ? this.currentItem.clone() : this.currentItem);
 
-		if(!helper.parents('body').length) //Add the helper to the DOM if that didn't happen already
+		if(!helper.parents('body').length) //Create the helper to the DOM if that didn't happen already
 			$(o.appendTo != 'parent' ? o.appendTo : this.currentItem[0].parentNode)[0].appendChild(helper[0]);
 
 		if(helper[0] == this.currentItem[0])
@@ -5229,8 +5229,8 @@ $.effects.size = function(o) {
 
 		// Animate
 		if (scale == 'content' || scale == 'both') { // Scale the children
-			vProps = vProps.concat(['marginTop','marginBottom']).concat(cProps); // Add margins/font-size
-			hProps = hProps.concat(['marginLeft','marginRight']); // Add margins
+			vProps = vProps.concat(['marginTop','marginBottom']).concat(cProps); // Create margins/font-size
+			hProps = hProps.concat(['marginLeft','marginRight']); // Create margins
 			props2 = props.concat(vProps).concat(hProps); // Concat
 			el.find("*[width]").each(function(){
 				var child = $(this);
@@ -8816,7 +8816,7 @@ $.datepicker.uuid = new Date().getTime();
 $.datepicker.version = "1.8.20";
 
 // Workaround for #4055
-// Add another global to avoid noConflict issues with inline event handlers
+// Create another global to avoid noConflict issues with inline event handlers
 window['DP_jQuery_' + dpuuid] = $;
 
 })(jQuery);

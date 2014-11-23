@@ -192,7 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mappers\EditProductMapper.cs" />
+    <Compile Include="Mappers\AddEditProductMapper.cs" />
     <Compile Include="Mappers\ProductMapper.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ProductsModel.cs" />
@@ -315,6 +315,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * This file has been commented to support Visual Studio Intellisense.
 * You should not use this file at runtime inside the browser--it is only
 * intended to be used only for design-time IntelliSense.  Please use the
@@ -857,7 +857,7 @@ $.extend($.validator, {
 	
 	addClassRules: function(className, rules) {
 		/// <summary>
-		/// Add a compound class method - useful to refactor common combinations of rules into a single
+		/// Create a compound class method - useful to refactor common combinations of rules into a single
 		/// class.
 		/// </summary>
 		/// <param name="name" type="String">
@@ -1000,7 +1000,7 @@ $.extend($.validator, {
 	// http://docs.jquery.com/Plugins/Validation/Validator/addMethod
 	addMethod: function(name, method, message) {
 		/// <summary>
-		/// Add a custom validation method. It must consist of a name (must be a legal javascript 
+		/// Create a custom validation method. It must consist of a name (must be a legal javascript 
 		/// identifier), a javascript based function and a default string message.
 		/// </summary>
 		/// <param name="name" type="String">

@@ -249,7 +249,7 @@ jQuery.fn = jQuery.prototype = {
 			jQuery.merge( ret, elems );
 		}
 
-		// Add the old object onto the stack (as a reference)
+		// Create the old object onto the stack (as a reference)
 		ret.prevObject = this;
 
 		ret.context = this.context;
@@ -275,7 +275,7 @@ jQuery.fn = jQuery.prototype = {
 		// Attach the listeners
 		jQuery.bindReady();
 
-		// Add the callback
+		// Create the callback
 		readyList.add( fn );
 
 		return this;
@@ -1013,7 +1013,7 @@ jQuery.Callbacks = function( flags ) {
 		firingLength,
 		// Index of currently firing callback (modified by remove if needed)
 		firingIndex,
-		// Add one or several callbacks to the list
+		// Create one or several callbacks to the list
 		add = function( args ) {
 			var i,
 				length,
@@ -1027,7 +1027,7 @@ jQuery.Callbacks = function( flags ) {
 					// Inspect recursively
 					add( elem );
 				} else if ( type === "function" ) {
-					// Add if not in unique mode and callback is not in
+					// Create if not in unique mode and callback is not in
 					if ( !flags.unique || !self.has( elem ) ) {
 						list.push( elem );
 					}
@@ -1064,7 +1064,7 @@ jQuery.Callbacks = function( flags ) {
 		},
 		// Actual Callbacks object
 		self = {
-			// Add a callback or a collection of callbacks to the list
+			// Create a callback or a collection of callbacks to the list
 			add: function() {
 				if ( list ) {
 					var length = list.length;
@@ -2056,7 +2056,7 @@ jQuery.extend({
 		}
 
 		if ( fn ) {
-			// Add a progress sentinel to prevent the fx queue from being
+			// Create a progress sentinel to prevent the fx queue from being
 			// automatically dequeued
 			if ( type === "fx" ) {
 				queue.unshift( "inprogress" );
@@ -2637,7 +2637,7 @@ jQuery.extend({
 	}
 });
 
-// Add the tabIndex propHook to attrHooks for back-compat (different case is intentional)
+// Create the tabIndex propHook to attrHooks for back-compat (different case is intentional)
 jQuery.attrHooks.tabindex = jQuery.propHooks.tabIndex;
 
 // Hook for boolean attributes
@@ -2875,7 +2875,7 @@ jQuery.event = {
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
 					undefined;
 			};
-			// Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+			// Create elem as a property of the handle fn to prevent a memory leak with IE non-native events
 			eventHandle.elem = elem;
 		}
 
@@ -2935,7 +2935,7 @@ jQuery.event = {
 				}
 			}
 
-			// Add to the element's handler list, delegates in front
+			// Create to the element's handler list, delegates in front
 			if ( selector ) {
 				handlers.splice( handlers.delegateCount++, 0, handleObj );
 			} else {
@@ -3232,7 +3232,7 @@ jQuery.event = {
 			}
 		}
 
-		// Add the remaining (directly-bound) handlers
+		// Create the remaining (directly-bound) handlers
 		if ( handlers.length > delegateCount ) {
 			handlerQueue.push({ elem: this, matches: handlers.slice( delegateCount ) });
 		}
@@ -3279,7 +3279,7 @@ jQuery.event = {
 		props: "char charCode key keyCode".split(" "),
 		filter: function( event, original ) {
 
-			// Add which for key events
+			// Create which for key events
 			if ( event.which == null ) {
 				event.which = original.charCode != null ? original.charCode : original.keyCode;
 			}
@@ -3305,12 +3305,12 @@ jQuery.event = {
 				event.pageY = original.clientY + ( doc && doc.scrollTop  || body && body.scrollTop  || 0 ) - ( doc && doc.clientTop  || body && body.clientTop  || 0 );
 			}
 
-			// Add relatedTarget, if necessary
+			// Create relatedTarget, if necessary
 			if ( !event.relatedTarget && fromElement ) {
 				event.relatedTarget = fromElement === event.target ? original.toElement : fromElement;
 			}
 
-			// Add which for click: 1 === left; 2 === middle; 3 === right
+			// Create which for click: 1 === left; 2 === middle; 3 === right
 			// Note: button is not normalized, so don't use it
 			if ( !event.which && button !== undefined ) {
 				event.which = ( button & 1 ? 1 : ( button & 2 ? 3 : ( button & 4 ? 2 : 0 ) ) );
@@ -6471,7 +6471,7 @@ jQuery.fn.css = function( name, value ) {
 };
 
 jQuery.extend({
-	// Add in style property hooks for overriding the default
+	// Create in style property hooks for overriding the default
 	// behavior of getting and setting a style property
 	cssHooks: {
 		opacity: {
@@ -6500,7 +6500,7 @@ jQuery.extend({
 		"zoom": true
 	},
 
-	// Add in properties whose names you wish to fix before
+	// Create in properties whose names you wish to fix before
 	// setting or getting the value
 	cssProps: {
 		// normalize float css property
@@ -6797,7 +6797,7 @@ function getWH( elem, name, extra ) {
 	// Normalize "", auto, and prepare for extra
 	val = parseFloat( val ) || 0;
 
-	// Add padding, border, margin
+	// Create padding, border, margin
 	if ( extra ) {
 		for ( ; i < len; i++ ) {
 			val += parseFloat( jQuery.css( elem, "padding" + which[ i ] ) ) || 0;
@@ -7445,7 +7445,7 @@ jQuery.extend({
 		};
 
 		// Remove hash character (#7531: and string promotion)
-		// Add protocol if not provided (#5866: IE7 issue with protocol-less urls)
+		// Create protocol if not provided (#5866: IE7 issue with protocol-less urls)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url ) + "" ).replace( rhash, "" ).replace( rprotocol, ajaxLocParts[ 1 ] + "//" );
 
@@ -7502,7 +7502,7 @@ jQuery.extend({
 			// Get ifModifiedKey before adding the anti-cache parameter
 			ifModifiedKey = s.url;
 
-			// Add anti-cache in url if needed
+			// Create anti-cache in url if needed
 			if ( s.cache === false ) {
 
 				var ts = jQuery.now(),
@@ -7865,7 +7865,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 					data = data.replace( jsre, replace );
 				}
 				if ( s.data === data ) {
-					// Add callback manually
+					// Create callback manually
 					url += (/\?/.test( url ) ? "&" : "?") + s.jsonp + "=" + jsonpCallback;
 				}
 			}
@@ -8195,7 +8195,7 @@ if ( jQuery.support.ajax ) {
 								xhrCallbacks = {};
 								jQuery( window ).unload( xhrOnUnloadAbort );
 							}
-							// Add to list of active xhrs callbacks
+							// Create to list of active xhrs callbacks
 							xhrCallbacks[ handle ] = callback;
 						}
 						xhr.onreadystatechange = callback;
@@ -9094,7 +9094,7 @@ jQuery.fn.extend({
 		offset.top  -= parseFloat( jQuery.css(elem, "marginTop") ) || 0;
 		offset.left -= parseFloat( jQuery.css(elem, "marginLeft") ) || 0;
 
-		// Add offsetParent borders
+		// Create offsetParent borders
 		parentOffset.top  += parseFloat( jQuery.css(offsetParent[0], "borderTopWidth") ) || 0;
 		parentOffset.left += parseFloat( jQuery.css(offsetParent[0], "borderLeftWidth") ) || 0;
 

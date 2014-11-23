@@ -2349,7 +2349,7 @@ ko.bindingHandlers['selectedOptions'] = {
                 result.push(ko.selectExtensions.readValue(node));
             else if (tagName == "optgroup") {
                 var selectedValuesFromOptGroup = ko.bindingHandlers['selectedOptions'].getSelectedValuesFromSelectNode(node);
-                Array.prototype.splice.apply(result, [result.length, 0].concat(selectedValuesFromOptGroup)); // Add new entries to existing 'result' instance
+                Array.prototype.splice.apply(result, [result.length, 0].concat(selectedValuesFromOptGroup)); // Create new entries to existing 'result' instance
             }
         }
         return result;

@@ -411,7 +411,7 @@ var _object = _1228819969(flags);
 intellisense.annotate(_object, {
   'add': function() {
     /// <signature>
-    ///   <summary>Add a callback or a collection of callbacks to a callback list.</summary>
+    ///   <summary>Create a callback or a collection of callbacks to a callback list.</summary>
     ///   <param name="callbacks" type="Function">A function, or array of functions, that are to be added to the callback list.</param>
     /// </signature>
   },
@@ -469,7 +469,7 @@ var _object = _731531622(func);
 intellisense.annotate(_object, {
   'always': function() {
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object is either resolved or rejected.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object is either resolved or rejected.</summary>
     ///   <param name="alwaysCallbacks" type="Function">A function, or array of functions, that is called when the Deferred is resolved or rejected.</param>
     ///   <param name="alwaysCallbacks" type="Function">Optional additional functions, or arrays of functions, that are called when the Deferred is resolved or rejected.</param>
     ///   <returns type="Deferred" />
@@ -477,7 +477,7 @@ intellisense.annotate(_object, {
   },
   'done': function() {
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object is resolved.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object is resolved.</summary>
     ///   <param name="doneCallbacks" type="Function">A function, or array of functions, that are called when the Deferred is resolved.</param>
     ///   <param name="doneCallbacks" type="Function">Optional additional functions, or arrays of functions, that are called when the Deferred is resolved.</param>
     ///   <returns type="Deferred" />
@@ -485,7 +485,7 @@ intellisense.annotate(_object, {
   },
   'fail': function() {
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object is rejected.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object is rejected.</summary>
     ///   <param name="failCallbacks" type="Function">A function, or array of functions, that are called when the Deferred is rejected.</param>
     ///   <param name="failCallbacks" type="Function">Optional additional functions, or arrays of functions, that are called when the Deferred is rejected.</param>
     ///   <returns type="Deferred" />
@@ -531,7 +531,7 @@ intellisense.annotate(_object, {
   },
   'progress': function() {
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object generates progress notifications.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object generates progress notifications.</summary>
     ///   <param name="progressCallbacks" type="Function">A function, or array of functions, that is called when the Deferred generates progress notifications.</param>
     ///   <returns type="Deferred" />
     /// </signature>
@@ -579,13 +579,13 @@ intellisense.annotate(_object, {
   },
   'then': function() {
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object is resolved or rejected.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object is resolved or rejected.</summary>
     ///   <param name="doneCallbacks" type="Function">A function, or array of functions, called when the Deferred is resolved.</param>
     ///   <param name="failCallbacks" type="Function">A function, or array of functions, called when the Deferred is rejected.</param>
     ///   <returns type="Deferred" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add handlers to be called when the Deferred object is resolved or rejected.</summary>
+    ///   <summary>Create handlers to be called when the Deferred object is resolved or rejected.</summary>
     ///   <param name="doneCallbacks" type="Function">A function, or array of functions, called when the Deferred is resolved.</param>
     ///   <param name="failCallbacks" type="Function">A function, or array of functions, called when the Deferred is rejected.</param>
     ///   <param name="progressCallbacks" type="Function">A function, or array of functions, called when the Deferred notifies progress.</param>
@@ -671,27 +671,27 @@ intellisense.annotate(jQuery.Event.prototype, {
 intellisense.annotate(jQuery.fn, {
   'add': function() {
     /// <signature>
-    ///   <summary>Add elements to the set of matched elements.</summary>
+    ///   <summary>Create elements to the set of matched elements.</summary>
     ///   <param name="selector" type="String">A string representing a selector expression to find additional elements to add to the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add elements to the set of matched elements.</summary>
+    ///   <summary>Create elements to the set of matched elements.</summary>
     ///   <param name="elements" type="Array">One or more elements to add to the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add elements to the set of matched elements.</summary>
+    ///   <summary>Create elements to the set of matched elements.</summary>
     ///   <param name="html" type="String">An HTML fragment to add to the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add elements to the set of matched elements.</summary>
+    ///   <summary>Create elements to the set of matched elements.</summary>
     ///   <param name="jQuery object" type="jQuery object ">An existing jQuery object to add to the set of matched elements.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add elements to the set of matched elements.</summary>
+    ///   <summary>Create elements to the set of matched elements.</summary>
     ///   <param name="selector" type="String">A string representing a selector expression to find additional elements to add to the set of matched elements.</param>
     ///   <param name="context" type="Element">The point in the document at which the selector should begin matching; similar to the context argument of the $(selector, context) method.</param>
     ///   <returns type="jQuery" />
@@ -768,7 +768,7 @@ intellisense.annotate(jQuery.fn, {
     /// <summary>Selects all elements.</summary>
   },
   'andSelf': function() {
-    /// <summary>Add the previous set of elements on the stack to the current set.</summary>
+    /// <summary>Create the previous set of elements on the stack to the current set.</summary>
     /// <returns type="jQuery" />
   },
   'animate': function() {
@@ -2011,12 +2011,12 @@ intellisense.annotate(jQuery.fn, {
   },
   'pushStack': function() {
     /// <signature>
-    ///   <summary>Add a collection of DOM elements onto the jQuery stack.</summary>
+    ///   <summary>Create a collection of DOM elements onto the jQuery stack.</summary>
     ///   <param name="elements" type="Array">An array of elements to push onto the stack and make into a new jQuery object.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add a collection of DOM elements onto the jQuery stack.</summary>
+    ///   <summary>Create a collection of DOM elements onto the jQuery stack.</summary>
     ///   <param name="elements" type="Array">An array of elements to push onto the stack and make into a new jQuery object.</param>
     ///   <param name="name" type="String">The name of a jQuery method that generated the array of elements.</param>
     ///   <param name="arguments" type="Array">The arguments that were passed in to the jQuery method (for serialization).</param>
@@ -2323,23 +2323,23 @@ intellisense.annotate(jQuery.fn, {
   },
   'toggleClass': function() {
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Create or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
     ///   <param name="className" type="String">One or more class names (separated by spaces) to be toggled for each element in the matched set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Create or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
     ///   <param name="className" type="String">One or more class names (separated by spaces) to be toggled for each element in the matched set.</param>
     ///   <param name="switch" type="Boolean">A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Create or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
     ///   <param name="switch" type="Boolean">A boolean value to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Create or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
     ///   <param name="function(index, class, switch)" type="Function">A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.</param>
     ///   <param name="switch" type="Boolean">A boolean value to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
