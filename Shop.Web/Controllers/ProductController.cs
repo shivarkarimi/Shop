@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Shop.Core.Entities;
 using Shop.Web.DataAccessLayer;
 using Shop.Web.Mappers;
+using Shop.Web.Models;
 
 namespace Shop.Web.Controllers
 {
@@ -22,6 +23,12 @@ namespace Shop.Web.Controllers
             var product = _shopContext.GetProductById(id);
             var productViewModel = _productMapper.ToViewModel(product);
             return View(productViewModel);
+        }
+
+        public ActionResult All()
+        {
+            var productsModel = new ProductsModel(_shopContext);
+            return View("All",productsModel);
         }
 
         [HttpGet]
