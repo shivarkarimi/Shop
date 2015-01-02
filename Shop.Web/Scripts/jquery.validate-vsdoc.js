@@ -4,7 +4,7 @@
 * intended to be used only for design-time IntelliSense.  Please use the
 * standard jQuery library for all production use.
 *
-* Comment version: 1.8
+* Comment version: 1.13.1
 */
 
 /*
@@ -15,12 +15,9 @@
 * for informational purposes only and are not the license terms under
 * which Microsoft distributed this file.
 *
-* jQuery validation plugin 1.8.0
-*
-* http://bassistance.de/jquery-plugins/jquery-plugin-validation/
-* http://docs.jquery.com/Plugins/Validation
-*
-* Copyright (c) 2006 - 2011 Jörn Zaefferer
+* jQuery Validation Plugin - v1.13.1 - 2/4/2013
+* https://github.com/jzaefferer/jquery-validation
+* Copyright (c) 2013 Jörn Zaefferer; Licensed MIT
 *
 */
 
@@ -857,7 +854,7 @@ $.extend($.validator, {
 	
 	addClassRules: function(className, rules) {
 		/// <summary>
-		/// Create a compound class method - useful to refactor common combinations of rules into a single
+		/// Add a compound class method - useful to refactor common combinations of rules into a single
 		/// class.
 		/// </summary>
 		/// <param name="name" type="String">
@@ -1000,7 +997,7 @@ $.extend($.validator, {
 	// http://docs.jquery.com/Plugins/Validation/Validator/addMethod
 	addMethod: function(name, method, message) {
 		/// <summary>
-		/// Create a custom validation method. It must consist of a name (must be a legal javascript 
+		/// Add a custom validation method. It must consist of a name (must be a legal javascript 
 		/// identifier), a javascript based function and a default string message.
 		/// </summary>
 		/// <param name="name" type="String">

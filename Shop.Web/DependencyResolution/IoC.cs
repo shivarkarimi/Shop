@@ -16,8 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-using Shop.Web.DataAccessLayer;
 using StructureMap;
+using StructureMap.Graph;
 namespace Shop.Web.DependencyResolution {
     public static class IoC {
         public static IContainer Initialize() {
@@ -28,7 +28,7 @@ namespace Shop.Web.DependencyResolution {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
                                     });
-                           x.For<IShopContext>().Use<ShopContext>();
+            //                x.For<IExample>().Use<Example>();
                         });
             return ObjectFactory.Container;
         }
