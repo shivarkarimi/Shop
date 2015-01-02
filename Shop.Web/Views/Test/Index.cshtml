@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>Product</h2>
+
+@foreach (var item in Model.Products())
+{
+    <ul></ul>
+    <table>
+        <tr>
+            <td>
+                @Html.ActionLink((string)@item.ProductName, "Index", "Product", new { id = item.ProductId }, null)
+            </td>
+            <td>@Html.ActionLink("Edit", "Edit", "Product", new { id = item.ProductId }, null)</td>
+        </tr>
+    </table>
+
+}
+
+
