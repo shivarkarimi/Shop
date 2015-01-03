@@ -9,6 +9,7 @@ namespace Shop.Web.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly string testi;
         private readonly IShopContext _shopContext;
         private readonly ProductMapper _productMapper;
 
