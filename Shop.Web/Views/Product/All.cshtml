@@ -1,22 +1,22 @@
-﻿@model Shop.Web.Models.ProductsModel
+﻿@model IEnumerable<Shop.Core.Entities.Product>
+
 @{
     ViewBag.Title = "All";
 }
 
-<h2>Product</h2>
+<h2>All</h2>
 
-@foreach (var item in Model.Products())
-{
-    <ul>
-    </ul>
-    <table>
-        <tr>
-            <td>
-                @Html.ActionLink(@item.ProductName, "Index", "Product", new { id = item.ProductId }, null)
-            </td>
-            <td>@Html.ActionLink("Edit", "Edit", "Product", new { id = item.ProductId }, null)</td>
-        </tr>
-    </table>
- 
-}
-
+<ul></ul>
+<table>
+    @{
+        foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(product.ProductName, "Index", "Product", new { id = product.ProductId }, null)
+                </td>
+                <td>@Html.ActionLink("Edit", "Edit", "Product", new { id = product.ProductId }, null)</td>
+            </tr>
+        }
+    }
+</table>

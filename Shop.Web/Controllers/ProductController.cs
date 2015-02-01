@@ -1,48 +1,45 @@
 ﻿using System.Data.Entity.Infrastructure;
 using System.Web.Mvc;
-using Shop.Core.Entities;
 using Shop.Web.DataAccessLayer;
-using Shop.Web.Mappers;
-using Shop.Web.Models;
 
 namespace Shop.Web.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly string testi;
         private readonly IShopContext _shopContext;
-        private readonly ProductMapper _productMapper;
 
-        public ProductController(IShopContext shopContext, ProductMapper productMapper)
+        public ProductController(IShopContext shopContext)
         {
             _shopContext = shopContext;
-            _productMapper = productMapper;
-        }
-
-        public ActionResult Index(int id)
-        {
-            var product = _shopContext.GetProductById(id);
-            var productViewModel = _productMapper.ToViewModel(product);
-            return View(productViewModel);
-        }
-
-        public ActionResult All()
-        {
-            var productsModel = new ProductsModel(_shopContext);
-            return View("All",productsModel);
         }
 
         [HttpGet]
-        [AcceptVerbs("GET")]
-        public ActionResult Edit(int id)
+        [Route("product/{id}")]
+        public ActionResult Index(int id)
         {
             var product = _shopContext.GetProductById(id);
-
-            var productMapper = new AddEditProductMapper();
-            var editProductViewModel = productMapper.ToViewModel(product);
-
-            return View(editProductViewModel);
+            return View(product);
         }
+
+
+        [HttpGet]
+        [Route("product/all")]
+        public ActionResult All()
+        {
+            return View("All", _shopContext.Products);
+        }
+
+        //        [HttpGet]
+        //        [AcceptVerbs("GET")]
+        //        public ActionResult Edit(int id)
+        //        {
+        //            var product = _shopContext.GetProductById(id);
+        //
+        //            var productMapper = new AddEditProductMapper();
+        //            var editProductViewModel = productMapper.ToViewModel(product);
+        //
+        //            return View(editProductViewModel);
+        //        }
 
         [HttpPost]
         [AcceptVerbs("POST")]
@@ -76,26 +73,27 @@ namespace Shop.Web.Controllers
         }
 
 
-        [HttpPost]
-        [AcceptVerbs("Post")]
-        public ActionResult Create([Bind(Exclude = "ProductId")] Product product)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    _shopContext.Add(product);
-                    var productViewModel = _productMapper.ToViewModel(product);
-                    return View("Index", productViewModel);
-                }
-            }
-            catch (RetryLimitExceededException)
-            {
-                ModelState.AddModelError("",
-                    "Unable to Add the item. Try again, and if the problem persists, see your system administrator.");
-            }
-
-            return View("Create");
-        }
+        //        [HttpPost]
+        //        [AcceptVerbs("Post")]
+        //        public ActionResult Create([Bind(Exclude = "ProductId")] Product product)
+        //        {
+        //            try
+        //            {
+        //                if (ModelState.IsValid)
+        //                {
+        //                    _shopContext.Add(product);
+        //                    var productViewModel = _productMapper.ToViewModel(product);
+        //                    return View("Index", productViewModel);
+        //                }
+        //            }
+        //            catch (RetryLimitExceededException)
+        //            {
+        //                ModelState.AddModelError("",
+        //                    "Unable to Add the item. Try again, and if the problem persists, see your system administrator.");
+        //            }
+        //
+        //            return View("Create");
+        //        }
+        //    }
     }
 }
